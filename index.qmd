@@ -1,4 +1,20 @@
 ---
-title: "Yoselyn_Ramirez.github.io"
+title: "Yoselyn Ramirez"
+about: 
+  template: trestles
+  links: 
+    - text: Email
+      href: mailto:Yoselyn_Ramirez@ucsb.edu
+      target: _blank
+    - text: GitHub
+      href: https://github.com/YoselynR
+      target: _blank
 ---
 
+Body of Bio
+
+## Education
+Body
+
+## Professional Experience
+Body

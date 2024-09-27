@@ -4,6 +4,27 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yoselyn Ramirez",
+    "section": "",
+    "text": "Body of Bio"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Yoselyn Ramirez",
+    "section": "Education",
+    "text": "Education\nBody"
+  },
+  {
+    "objectID": "index.html#professional-experience",
+    "href": "index.html#professional-experience",
+    "title": "Yoselyn Ramirez",
+    "section": "Professional Experience",
+    "text": "Professional Experience\nBody"
   }
 ]
