@@ -7,13 +7,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about_me.qmd
+        text: About_me
 
 format:
   html:
     theme: lux
     css: styles.css
-    toc: false
+    toc: True
     page-layout: full
 
 editor: visual

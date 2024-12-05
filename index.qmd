@@ -11,10 +11,4 @@ about:
       target: _blank
 ---
 
-Body of Bio
-
-## Education
-Body
-
-## Professional Experience
-Body
+...

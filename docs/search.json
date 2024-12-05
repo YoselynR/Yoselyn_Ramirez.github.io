@@ -1,30 +1,16 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "about_me.html",
+    "href": "about_me.html",
+    "title": "About_me",
     "section": "",
-    "text": "About this site"
+    "text": "…"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Yoselyn Ramirez",
     "section": "",
-    "text": "Body of Bio"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Yoselyn Ramirez",
-    "section": "Education",
-    "text": "Education\nBody"
-  },
-  {
-    "objectID": "index.html#professional-experience",
-    "href": "index.html#professional-experience",
-    "title": "Yoselyn Ramirez",
-    "section": "Professional Experience",
-    "text": "Professional Experience\nBody"
+    "text": "…"
   }
 ]
