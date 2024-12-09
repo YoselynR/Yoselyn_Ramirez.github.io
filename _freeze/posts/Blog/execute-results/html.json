@@ -1,0 +1,15 @@
+{
+  "hash": "6b047a3c30cf3ba5e4d22de2103db5b0",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Blog\"\nauthor: \"Yos\"\n---\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

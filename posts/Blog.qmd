@@ -1,0 +1,17 @@
+---
+title: "My First Post"
+date: 2024-12-09
+categories: [blog]
+tags: [first, post]
+draft: false
+---
+
+# My First Blog Post
+
+This is the content of my first blog post.
+
+```{r}
+blog_posts <- list.files("posts", pattern = "*.qmd", full.names = TRUE)
+blog_posts
+```
+
