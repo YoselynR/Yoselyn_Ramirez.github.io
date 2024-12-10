@@ -1,3 +1,11 @@
+---
+jupyter:
+  kernelspec:
+    display_name: Anaconda 3 (EDS220)
+    language: python3
+    name: python3
+---
+
 Author: Yos Ramirez
 
 EDS 220 Blog Post
@@ -43,6 +51,7 @@ When combined, they create a "true-color" image that visually represents the lan
 ### Import libraries
 
 ```{python}
+#| tags: []
 import os
 import rioxarray as rioxr
 import matplotlib.pyplot as plt
@@ -71,8 +80,9 @@ from rasterio.plot import show
 File path to the Landsat data using `os` and import using `rioxr.open_rasterio()`.
 
 ```{python}
+#| tags: []
 # Construct the file path
-base_dir = 'data'
+base_dir = '/courses/EDS220/data/hwk4_landsat_data'
 landsat = 'landsat8-2018-01-26-sb-simplified.nc'
 file_path = os.path.join(base_dir, landsat)
 
@@ -88,6 +98,7 @@ print("Updated CRS:", landsat_data.rio.crs)
 After exploration of the data, that is important in determining the next steps to take for the final output of a RGB image, I was able to obtain the following. The data is geospatial data with x, y, which represent the spatial grid and band. The band variables are red, green, blue, nir08, swir22. Each variable has 5mb of data and are float64 or a number that can be a decimal. The dimensions are 889 for the x longitude, and 757 for the y latitude. The crs is WGS 84 or pseudo mercator. The scale factor is 1.0 not requiring alteration. The code below is what I used to explore the data.
 
 ```{python}
+#| tags: []
 # Print coordinates
 #print("\nDataset Coordinates:",landsat_data.coords)
 # Print variables
@@ -109,6 +120,7 @@ Dropping the band dimension of the data, especially in the context of geospatial
 -   The drop_vars() method is used to drop specific variables from a dataset. In the case of geospatial data, this could refer to removing individual bands or metadata variables that are no longer required for analysis or visualization.
 
 ```{python}
+#| tags: []
 # Drop single band with squeeze, and drop variables associated with band
 landsat_data = landsat_data.squeeze()
 landsat_data = landsat_data.drop_vars('band')
@@ -125,30 +137,24 @@ Finally plotting without new variables, the code below does the follwoing to ach
 -   using `.plot.imshow()` creating an RGB image with the data. Warning is ok.
 
 ```{python}
+#| tags: []
 # Plot landsat data as rbg array
 landsat_data[['red', 'green', 'blue']].to_array().plot.imshow()
 plt.title('RGB Image (Raw)') 
 plt.show()
 ```
 
-```{python}
-Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
-```
-
-![png](False-color-blog-Ramirez_files/False-color-blog-Ramirez_16_1.png)
-
 ## Trying again, because something is wrong...
 
 The issue here is the clouds: their RGB values are outliers and cause the other values to be squished when plotting. By using `robust=True` the actual RGB image is displayed.
 
 ```{python}
+#| tags: []
 # Plot landsat data as rbg array, include robust true to fix outliers
 landsat_data[['red', 'green', 'blue']].to_array().plot.imshow(robust=True)
 plt.title('RGB Image (True Color)') 
 plt.show()
 ```
-
-![png](False-color-blog-Ramirez_files/False-color-blog-Ramirez_18_0.png)
 
 ## Yay, we did it!
 
@@ -174,13 +180,12 @@ In false color images:
 **Drought or Water Stress:** In agriculture, drought or water stress can be identified through changes in vegetation health, which is visible in false color images where vegetation will show a distinctive color (often red or yellow when under stress).
 
 ```{python}
+#| tags: []
 # Plot landsat data as false color image as array, include robust true to fix outliers
 landsat_data[['swir22', 'nir08', 'red']].to_array().plot.imshow(robust=True)
 plt.title("False Color Image") # Title of plot
 plt.show() # Show plot
 ```
-
-![png](False-color-blog-Ramirez_files/False-color-blog-Ramirez_22_0.png)
 
 ## Before we map the Thomas Fire, a little on parameter
 
@@ -189,6 +194,7 @@ In a previous code chunk I manually selected for the parameter of the Thomas Fir
 ## Time to Map :)
 
 ```{python}
+#| tags: []
 # Import thomas shape file
 fire_shapefile = 'data/Thomas_fire_perimeter.shp' # File path
 thomas_fire = gpd.read_file(fire_shapefile) # Read in file with file path
@@ -197,30 +203,7 @@ thomas_fire = thomas_fire.to_crs(landsat_data.rio.crs)
 ```
 
 ```{python}
-# Plot Thomas fire parimeter with false color imagery
-fig, ax = plt.subplots(figsize=(10, 10)) # Figure size
-landsat_data[['swir22','nir08','red']].to_array().plot.imshow(robust=True, # Plot false color from landsat data as array
-                                                              ax=ax) # Set axis
-thomas_fire.boundary.plot(ax=ax, # Set axis
-                          edgecolor='red', # Boundary color
-                          linewidth=2, # Boundary width
-                          label="Thomas Fire Perimeter") # Boundary label
-plt.title("Thomas Fire with False Color Imagery") # Title of plot
-plt.legend() # Legend
-plt.show() # Show plot
-```
-
-![png](False-color-blog-Ramirez_files/False-color-blog-Ramirez_27_0.png)
-
-``` {python}
-# Import thomas shape file
-fire_shapefile = 'data/Thomas_fire_perimeter.shp' # File path
-thomas_fire = gpd.read_file(fire_shapefile) # Read in file with file path
-# Make crs the same for both data
-thomas_fire = thomas_fire.to_crs(landsat_data.rio.crs)
-```
-
-``` {python}
+#| tags: []
 # Plot Thomas fire parimeter with false color imagery
 fig, ax = plt.subplots(figsize=(10, 10)) # Figure size
 landsat_data[['swir22','nir08','red']].to_array().plot.imshow(robust=True, # Plot false color from landsat data as array
@@ -250,9 +233,7 @@ import pandas as pd
 
 aqi_17 = pd.read_csv("data/daily_aqi_by_county_2017.csv")
 aqi_18 = pd.read_csv("data/daily_aqi_by_county_2018.csv")
-```
 
-```{python}
 # Combine datasets (2017 and 2018)
 aqi = pd.concat([aqi_17, aqi_18])
 # Simplify column names
@@ -260,9 +241,6 @@ aqi.columns = (aqi.columns
                   .str.lower()
                   .str.replace(' ', '_')
                 )
-```
-
-```{python}
 # Save filtered (Santa Barbara) data 
 aqi_sb = aqi[aqi['county_name'] == 'Santa Barbara']
 # Keep only specific columns (date, aqi, category, defining_parameter, defining_site, and number_of_sites_reporting)
@@ -273,9 +251,7 @@ aqi_sb['date'] = pd.to_datetime(aqi_sb['date'])
 aqi_sb = aqi_sb.set_index('date').sort_index()
 # Add new 5 day mean column to data (Santa Barbara)
 aqi_sb['five_day_average'] = aqi_sb['aqi'].rolling(window='5D').mean()
-```
 
-```{python}
 import matplotlib.pyplot as plt
 # Plot figure
 plt.figure(figsize=(14, 7))
@@ -303,8 +279,6 @@ plt.tight_layout()
 # Show plot
 plt.show()
 ```
-
-![png](False-color-blog-Ramirez_files/False-color-blog-Ramirez_32_0.png)
 
 The air quality during the Thomas Fire was high. The Thomas fire shows a spike in the aqi daily shown in blue and 5 day average shown in pink. I've highlighted the month of December yellow to clarify the spike occurence. I suggest doing this to clearly identify the time of interest. It is clear that the daily aqi was much higher than the 5 day average but the 5 day average does remain high for a while compared to normal days. The daily aqi dropped from the highest point to where the average remained. For atleast half of the month of December the daily aqi and the 5 day average were above 150 in which pollution would be a problem. This data visualization shows the importance of being able to gather data and applying the skills of analysis.
 
