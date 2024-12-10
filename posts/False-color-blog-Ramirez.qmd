@@ -82,7 +82,7 @@ File path to the Landsat data using `os` and import using `rioxr.open_rasterio()
 ```{python}
 #| tags: []
 # Construct the file path
-base_dir = '/courses/EDS220/data/hwk4_landsat_data'
+base_dir = 'data'
 landsat = 'landsat8-2018-01-26-sb-simplified.nc'
 file_path = os.path.join(base_dir, landsat)
 

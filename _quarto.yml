@@ -9,7 +9,7 @@ website:
         text: Home
       - href: about_me.qmd
         text: About_me
-      - href: Blog.qmd
+      - href: posts/False-color-blog-Ramirez.qmd
         text: Blog
 
 format:

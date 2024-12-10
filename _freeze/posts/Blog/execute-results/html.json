@@ -1,8 +1,8 @@
 {
-  "hash": "6b047a3c30cf3ba5e4d22de2103db5b0",
+  "hash": "1c9d57dd7abbd8ea6c30d0d27d5ca4b4",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Blog\"\nauthor: \"Yos\"\n---\n\n::: {.cell}\n\n:::\n",
+    "markdown": "---\ntitle: \"My First Post\"\ndate: 2024-12-09\ncategories: [blog]\ntags: [first, post]\ndraft: false\n---\n\n\n# My First Blog Post\n\nThis is the content of my first blog post.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nblog_posts <- list.files(pattern = \"*.qmd\", full.names = TRUE)\nblog_posts\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"./Blog.qmd\"                     \"./False-color-blog-Ramirez.qmd\"\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# List .qmd files in the 'posts' directory\nblog_posts <- list.files(\"posts\", pattern = \"*.qmd\", full.names = TRUE)\n\n# Extract titles from the first header (#) in each blog post\nblog_titles <- sapply(blog_posts, function(x) {\n  lines <- readLines(x)\n  title <- gsub(\"^#\\\\s*\", \"\", lines[1])  # Remove markdown header syntax (#)\n  return(title)\n})\n\n# Create links to each post\nlinks <- paste0(\"[\", blog_titles, \"](posts/\", basename(blog_posts), \")\")\ncat(links, sep = \"\\n\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[](posts/)\n```\n\n\n:::\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

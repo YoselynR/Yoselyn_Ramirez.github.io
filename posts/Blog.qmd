@@ -11,7 +11,24 @@ draft: false
 This is the content of my first blog post.
 
 ```{r}
-blog_posts <- list.files("posts", pattern = "*.qmd", full.names = TRUE)
+blog_posts <- list.files(pattern = "*.qmd", full.names = TRUE)
 blog_posts
+```
+
+```{r}
+# List .qmd files in the 'posts' directory
+blog_posts <- list.files("posts", pattern = "*.qmd", full.names = TRUE)
+
+# Extract titles from the first header (#) in each blog post
+blog_titles <- sapply(blog_posts, function(x) {
+  lines <- readLines(x)
+  title <- gsub("^#\\s*", "", lines[1])  # Remove markdown header syntax (#)
+  return(title)
+})
+
+# Create links to each post
+links <- paste0("[", blog_titles, "](posts/", basename(blog_posts), ")")
+cat(links, sep = "\n")
+
 ```
 
