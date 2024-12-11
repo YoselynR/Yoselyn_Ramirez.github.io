@@ -1,9 +1,6 @@
 ---
-jupyter:
-  kernelspec:
-    display_name: Anaconda 3 (EDS220)
-    language: python3
-    name: python3
+title: "My Analysis"
+output: html_document
 ---
 
 Author: Yos Ramirez
@@ -50,6 +47,23 @@ When combined, they create a "true-color" image that visually represents the lan
 
 ### Import libraries
 
+```{r}
+#install.packages("reticulate")
+library(reticulate)
+
+# Specify the Python executable path
+use_python("/Users/yos/opt/anaconda3/bin/python3")
+# Check if Python is configured correctly
+py_config()
+```
+
+```{r}
+library(reticulate)
+py_run_string("import matplotlib")
+
+```
+
+
 ```{python}
 #| tags: []
 import os
@@ -57,9 +71,12 @@ import rioxarray as rioxr
 import matplotlib.pyplot as plt
 import numpy as np
 import geopandas as gpd
+import fiona
 import rasterio
 from rasterio.plot import show
 ```
+
+
 
 1.  When working with datasets or results that are stored in different directories, `os` helps you manage file paths, allowing your code to be flexible and system-agnostic. For example, os.path.join() is often used to create platform-independent file paths.
 
@@ -194,10 +211,19 @@ In a previous code chunk I manually selected for the parameter of the Thomas Fir
 ## Time to Map :)
 
 ```{python}
+print(fiona.__version__)
+print(gpd.__version__)
+```
+
+```{python}
 #| tags: []
 # Import thomas shape file
 fire_shapefile = 'data/Thomas_fire_perimeter.shp' # File path
 thomas_fire = gpd.read_file(fire_shapefile) # Read in file with file path
+```
+
+
+```{python}
 # Make crs the same for both data
 thomas_fire = thomas_fire.to_crs(landsat_data.rio.crs)
 ```
@@ -227,9 +253,6 @@ Air quality during and after fires is critically important for several reasons, 
 
 ```{python}
 import pandas as pd
-# Read in data
-#aqi_17 = pd.read_csv('https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2017.zip')
-#aqi_18 = pd.read_csv('https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2018.zip')
 
 aqi_17 = pd.read_csv("data/daily_aqi_by_county_2017.csv")
 aqi_18 = pd.read_csv("data/daily_aqi_by_county_2018.csv")
@@ -251,14 +274,15 @@ aqi_sb['date'] = pd.to_datetime(aqi_sb['date'])
 aqi_sb = aqi_sb.set_index('date').sort_index()
 # Add new 5 day mean column to data (Santa Barbara)
 aqi_sb['five_day_average'] = aqi_sb['aqi'].rolling(window='5D').mean()
+```
 
-import matplotlib.pyplot as plt
+```{python}
 # Plot figure
 plt.figure(figsize=(14, 7))
 # Plot aqi , label, color, size, and transparency
-plt.plot(aqi_sb.index, aqi_sb['aqi'], label='Daily AQI', color='darkblue', linewidth=1, alpha=0.7)
+plt.plot(aqi_sb.index.values, aqi_sb['aqi'].values, label='Daily AQI', color='darkblue', linewidth=1, alpha=0.7)
 # Plot average, label, color, and size
-plt.plot(aqi_sb.index, aqi_sb['five_day_average'], label='5-Day Average AQI', color='fuchsia', linewidth=2)
+plt.plot(aqi_sb.index.values, aqi_sb['five_day_average'].values, label='5-Day Average AQI', color='fuchsia', linewidth=2)
 # Title and size
 plt.title('Daily AQI and 5-Day Average AQI (Santa Barbara County)', fontsize=16)
 # X label and size

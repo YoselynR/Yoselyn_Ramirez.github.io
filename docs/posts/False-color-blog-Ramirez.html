@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Yoselyn_Ramirez.github.io</title>
+<title>Yoselyn_Ramirez.github.io - My Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -108,7 +142,23 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">My Analysis</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -142,6 +192,7 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
 
 
 
@@ -182,14 +233,39 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="first-lets-look-at-rgb-output">First let’s look at RGB output</h2>
 <section id="import-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-libraries">Import libraries</h3>
-<pre class="{python}"><code>#| tags: []
-import os
-import rioxarray as rioxr
-import matplotlib.pyplot as plt
-import numpy as np
-import geopandas as gpd
-import rasterio
-from rasterio.plot import show</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("reticulate")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the Python executable path</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">use_python</span>(<span class="st">"/Users/yos/opt/anaconda3/bin/python3"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Python is configured correctly</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">py_config</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>python:         /Users/yos/opt/anaconda3/bin/python3
+libpython:      /Users/yos/opt/anaconda3/lib/libpython3.8.dylib
+pythonhome:     /Users/yos/opt/anaconda3:/Users/yos/opt/anaconda3
+version:        3.8.8 (default, Apr 13 2021, 12:59:45)  [Clang 10.0.0 ]
+numpy:          /Users/yos/opt/anaconda3/lib/python3.8/site-packages/numpy
+numpy_version:  1.24.4
+
+NOTE: Python version was forced by use_python() function</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">py_run_string</span>(<span class="st">"import matplotlib"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rioxarray <span class="im">as</span> rioxr</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fiona</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.plot <span class="im">import</span> show</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ol type="1">
 <li><p>When working with datasets or results that are stored in different directories, <code>os</code> helps you manage file paths, allowing your code to be flexible and system-agnostic. For example, os.path.join() is often used to create platform-independent file paths.</p></li>
 <li><p>As for <code>rioxarray</code>, this is an extension of the xarray library for handling geospatial raster data (like satellite imagery or other geospatial data formats). It leverages rasterio to read, write, and process raster files.</p></li>
@@ -203,29 +279,52 @@ from rasterio.plot import show</code></pre>
 <section id="file-path-and-import-data" class="level3">
 <h3 class="anchored" data-anchor-id="file-path-and-import-data">File path and import data</h3>
 <p>File path to the Landsat data using <code>os</code> and import using <code>rioxr.open_rasterio()</code>.</p>
-<pre class="{python}"><code>#| tags: []
-# Construct the file path
-base_dir = 'data'
-landsat = 'landsat8-2018-01-26-sb-simplified.nc'
-file_path = os.path.join(base_dir, landsat)
-
-# Open the raster data using rioxr
-landsat_data = rioxr.open_rasterio(file_path)
-# Print landsat data
-print(landsat_data)
-print("Current CRS:", landsat_data.rio.crs)
-landsat_data = landsat_data.rio.reproject("EPSG:3857")
-print("Updated CRS:", landsat_data.rio.crs)</code></pre>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct the file path</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>base_dir <span class="op">=</span> <span class="st">'data'</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>landsat <span class="op">=</span> <span class="st">'landsat8-2018-01-26-sb-simplified.nc'</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> os.path.join(base_dir, landsat)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Open the raster data using rioxr</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>landsat_data <span class="op">=</span> rioxr.open_rasterio(file_path)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Print landsat data</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(landsat_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;xarray.Dataset&gt;
+Dimensions:      (band: 1, x: 870, y: 731)
+Coordinates:
+  * band         (band) int64 1
+  * x            (x) float64 1.213e+05 1.216e+05 ... 3.557e+05 3.559e+05
+  * y            (y) float64 3.952e+06 3.952e+06 ... 3.756e+06 3.755e+06
+    spatial_ref  int64 0
+Data variables:
+    red          (band, y, x) float64 ...
+    green        (band, y, x) float64 ...
+    blue         (band, y, x) float64 ...
+    nir08        (band, y, x) float64 ...
+    swir22       (band, y, x) float64 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Current CRS:"</span>, landsat_data.rio.crs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Current CRS: EPSG:32611</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>landsat_data <span class="op">=</span> landsat_data.rio.reproject(<span class="st">"EPSG:3857"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Updated CRS:"</span>, landsat_data.rio.crs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Updated CRS: EPSG:3857</code></pre>
+</div>
+</div>
 <p>After exploration of the data, that is important in determining the next steps to take for the final output of a RGB image, I was able to obtain the following. The data is geospatial data with x, y, which represent the spatial grid and band. The band variables are red, green, blue, nir08, swir22. Each variable has 5mb of data and are float64 or a number that can be a decimal. The dimensions are 889 for the x longitude, and 757 for the y latitude. The crs is WGS 84 or pseudo mercator. The scale factor is 1.0 not requiring alteration. The code below is what I used to explore the data.</p>
-<pre class="{python}"><code>#| tags: []
-# Print coordinates
-#print("\nDataset Coordinates:",landsat_data.coords)
-# Print variables
-#print("\nDataset Variables:",landsat_data.variables.keys())
-# Print dimensions
-#print("\nDataset Dimensions:",landsat_data.dims)
-# Print band names and values
-#print("\nBand Names and Values:",landsat_data.data_vars)</code></pre>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print coordinates</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#print("\nDataset Coordinates:",landsat_data.coords)</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Print variables</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print("\nDataset Variables:",landsat_data.variables.keys())</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print dimensions</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#print("\nDataset Dimensions:",landsat_data.dims)</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Print band names and values</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#print("\nBand Names and Values:",landsat_data.data_vars)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="drop-dimension-but-why" class="level3">
 <h3 class="anchored" data-anchor-id="drop-dimension-but-why">Drop dimension, but why?</h3>
@@ -235,12 +334,19 @@ print("Updated CRS:", landsat_data.rio.crs)</code></pre>
 <li><p>The squeeze() method is used to remove dimensions of size 1 from an array. This is important when the dataset has dimensions that are not necessary for the analysis, which could result in confusion or the need for extra processing.</p></li>
 <li><p>The drop_vars() method is used to drop specific variables from a dataset. In the case of geospatial data, this could refer to removing individual bands or metadata variables that are no longer required for analysis or visualization.</p></li>
 </ul>
-<pre class="{python}"><code>#| tags: []
-# Drop single band with squeeze, and drop variables associated with band
-landsat_data = landsat_data.squeeze()
-landsat_data = landsat_data.drop_vars('band')
-# Verify dimensions and coordinates
-print(landsat_data.dims, landsat_data.coords)</code></pre>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop single band with squeeze, and drop variables associated with band</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>landsat_data <span class="op">=</span> landsat_data.squeeze()</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>landsat_data <span class="op">=</span> landsat_data.drop_vars(<span class="st">'band'</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify dimensions and coordinates</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(landsat_data.dims, landsat_data.coords)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Frozen({'x': 889, 'y': 757}) Coordinates:
+  * x            (x) float64 -1.349e+07 -1.349e+07 ... -1.32e+07 -1.32e+07
+  * y            (y) float64 4.26e+06 4.26e+06 4.259e+06 ... 4.012e+06 4.012e+06
+    spatial_ref  int64 0</code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="finally-an-rgb-image" class="level2">
@@ -251,20 +357,36 @@ print(landsat_data.dims, landsat_data.coords)</code></pre>
 <li>converting to a <code>numpy.array</code> using the <code>to_array()</code> method, and then</li>
 <li>using <code>.plot.imshow()</code> creating an RGB image with the data. Warning is ok.</li>
 </ul>
-<pre class="{python}"><code>#| tags: []
-# Plot landsat data as rbg array
-landsat_data[['red', 'green', 'blue']].to_array().plot.imshow()
-plt.title('RGB Image (Raw)') 
-plt.show()</code></pre>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot landsat data as rbg array</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>landsat_data[[<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>]].to_array().plot.imshow()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'RGB Image (Raw)'</span>) </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="False-color-blog-Ramirez_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="trying-again-because-something-is-wrong" class="level2">
 <h2 class="anchored" data-anchor-id="trying-again-because-something-is-wrong">Trying again, because something is wrong…</h2>
 <p>The issue here is the clouds: their RGB values are outliers and cause the other values to be squished when plotting. By using <code>robust=True</code> the actual RGB image is displayed.</p>
-<pre class="{python}"><code>#| tags: []
-# Plot landsat data as rbg array, include robust true to fix outliers
-landsat_data[['red', 'green', 'blue']].to_array().plot.imshow(robust=True)
-plt.title('RGB Image (True Color)') 
-plt.show()</code></pre>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot landsat data as rbg array, include robust true to fix outliers</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>landsat_data[[<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>]].to_array().plot.imshow(robust<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'RGB Image (True Color)'</span>) </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="False-color-blog-Ramirez_files/figure-html/unnamed-chunk-8-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="yay-we-did-it" class="level2">
 <h2 class="anchored" data-anchor-id="yay-we-did-it">Yay, we did it!</h2>
@@ -284,11 +406,19 @@ plt.show()</code></pre>
 <p><strong>Monitoring Deforestation and Land Use Change:</strong> False color images are commonly used to track land cover changes, such as deforestation, urbanization, and agricultural expansion. For example, a false color image with NIR mapped to red helps to easily distinguish vegetated areas (which would appear red) from other surfaces like bare soil or urban infrastructure (which would appear in different colors).</p>
 <p><strong>Soil Types:</strong> Different soil types, such as dry soil versus moist soil, can be more easily identified by using specific bands that reflect light differently. This is useful for agricultural planning or environmental monitoring.</p>
 <p><strong>Drought or Water Stress:</strong> In agriculture, drought or water stress can be identified through changes in vegetation health, which is visible in false color images where vegetation will show a distinctive color (often red or yellow when under stress).</p>
-<pre class="{python}"><code>#| tags: []
-# Plot landsat data as false color image as array, include robust true to fix outliers
-landsat_data[['swir22', 'nir08', 'red']].to_array().plot.imshow(robust=True)
-plt.title("False Color Image") # Title of plot
-plt.show() # Show plot</code></pre>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot landsat data as false color image as array, include robust true to fix outliers</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>landsat_data[[<span class="st">'swir22'</span>, <span class="st">'nir08'</span>, <span class="st">'red'</span>]].to_array().plot.imshow(robust<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"False Color Image"</span>) <span class="co"># Title of plot</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Show plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="False-color-blog-Ramirez_files/figure-html/unnamed-chunk-9-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="before-we-map-the-thomas-fire-a-little-on-parameter" class="level2">
@@ -297,24 +427,45 @@ plt.show() # Show plot</code></pre>
 </section>
 <section id="time-to-map" class="level2">
 <h2 class="anchored" data-anchor-id="time-to-map">Time to Map :)</h2>
-<pre class="{python}"><code>#| tags: []
-# Import thomas shape file
-fire_shapefile = 'data/Thomas_fire_perimeter.shp' # File path
-thomas_fire = gpd.read_file(fire_shapefile) # Read in file with file path
-# Make crs the same for both data
-thomas_fire = thomas_fire.to_crs(landsat_data.rio.crs)</code></pre>
-<pre class="{python}"><code>#| tags: []
-# Plot Thomas fire parimeter with false color imagery
-fig, ax = plt.subplots(figsize=(10, 10)) # Figure size
-landsat_data[['swir22','nir08','red']].to_array().plot.imshow(robust=True, # Plot false color from landsat data as array
-                                                              ax=ax) # Set axis
-thomas_fire.boundary.plot(ax=ax, # Set axis
-                          edgecolor='red', # Boundary color
-                          linewidth=2, # Boundary width
-                          label="Thomas Fire Perimeter") # Boundary label
-plt.title("Thomas Fire with False Color Imagery") # Title of plot
-plt.legend() # Legend
-plt.show() # Show plot</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fiona.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.9.0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gpd.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.13.2</code></pre>
+</div>
+</div>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import thomas shape file</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fire_shapefile <span class="op">=</span> <span class="st">'data/Thomas_fire_perimeter.shp'</span> <span class="co"># File path</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>thomas_fire <span class="op">=</span> gpd.read_file(fire_shapefile) <span class="co"># Read in file with file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make crs the same for both data</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>thomas_fire <span class="op">=</span> thomas_fire.to_crs(landsat_data.rio.crs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-tags="[]">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Thomas fire parimeter with false color imagery</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>)) <span class="co"># Figure size</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>landsat_data[[<span class="st">'swir22'</span>,<span class="st">'nir08'</span>,<span class="st">'red'</span>]].to_array().plot.imshow(robust<span class="op">=</span><span class="va">True</span>, <span class="co"># Plot false color from landsat data as array</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                                                              ax<span class="op">=</span>ax) <span class="co"># Set axis</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>thomas_fire.boundary.plot(ax<span class="op">=</span>ax, <span class="co"># Set axis</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                          edgecolor<span class="op">=</span><span class="st">'red'</span>, <span class="co"># Boundary color</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>                          linewidth<span class="op">=</span><span class="dv">2</span>, <span class="co"># Boundary width</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>                          label<span class="op">=</span><span class="st">"Thomas Fire Perimeter"</span>) <span class="co"># Boundary label</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Thomas Fire with False Color Imagery"</span>) <span class="co"># Title of plot</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>plt.legend() <span class="co"># Legend</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>plt.show() <span class="co"># Show plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="False-color-blog-Ramirez_files/figure-html/unnamed-chunk-13-7.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 <section id="figure-description" class="level3">
 <h3 class="anchored" data-anchor-id="figure-description">Figure description</h3>
 <p>The figure above shows the area of Santa Barbara county which the Thomas fire occurred in 2017, with a red outline for clarity. The image is in short-wave infrared, near-infrared, and red considered a false color image. This technique allows for better identification of burned areas, as the NIR band highlights areas affected by fire. The false color image clearly shows the red land compared to the green, enhancing the visibility of burned areas, as the NIR band highlights vegetation and areas affected by fire, while the SWIR band distinguishes between different land cover types. Darker red means the area has been burned recently, the lighter red shown above means the area has been burned but not so recent, in 2017.</p>
@@ -323,58 +474,68 @@ plt.show() # Show plot</code></pre>
 <section id="next-we-will-look-at-the-air-quality-index-during-the-time-of-the-thomas-fire." class="level2">
 <h2 class="anchored" data-anchor-id="next-we-will-look-at-the-air-quality-index-during-the-time-of-the-thomas-fire.">Next we will look at the Air Quality Index during the time of the Thomas Fire.</h2>
 <p>Air quality during and after fires is critically important for several reasons, as wildfires and even smaller fires can release a variety of harmful pollutants into the air, which pose serious health risks to humans and animals. During a wildfire, a number of harmful substances are released into the air. These pollutants can have immediate and long-term health impacts, particularly for vulnerable populations such as children, the elderly, and people with pre-existing health conditions. Wildfires can have a devastating impact on local ecosystems, and poor air quality during and after fires can harm vegetation and animal life.</p>
-<pre class="{python}"><code>import pandas as pd
-# Read in data
-#aqi_17 = pd.read_csv('https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2017.zip')
-#aqi_18 = pd.read_csv('https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2018.zip')
-
-aqi_17 = pd.read_csv("data/daily_aqi_by_county_2017.csv")
-aqi_18 = pd.read_csv("data/daily_aqi_by_county_2018.csv")
-
-# Combine datasets (2017 and 2018)
-aqi = pd.concat([aqi_17, aqi_18])
-# Simplify column names
-aqi.columns = (aqi.columns
-                  .str.lower()
-                  .str.replace(' ', '_')
-                )
-# Save filtered (Santa Barbara) data 
-aqi_sb = aqi[aqi['county_name'] == 'Santa Barbara']
-# Keep only specific columns (date, aqi, category, defining_parameter, defining_site, and number_of_sites_reporting)
-aqi_sb = aqi_sb[['date', 'aqi', 'category', 'defining_parameter', 'defining_site', 'number_of_sites_reporting']]
-# Convert specific object column (date) to datetime object
-aqi_sb['date'] = pd.to_datetime(aqi_sb['date'])
-# Save with new (date) index
-aqi_sb = aqi_sb.set_index('date').sort_index()
-# Add new 5 day mean column to data (Santa Barbara)
-aqi_sb['five_day_average'] = aqi_sb['aqi'].rolling(window='5D').mean()
-
-import matplotlib.pyplot as plt
-# Plot figure
-plt.figure(figsize=(14, 7))
-# Plot aqi , label, color, size, and transparency
-plt.plot(aqi_sb.index, aqi_sb['aqi'], label='Daily AQI', color='darkblue', linewidth=1, alpha=0.7)
-# Plot average, label, color, and size
-plt.plot(aqi_sb.index, aqi_sb['five_day_average'], label='5-Day Average AQI', color='fuchsia', linewidth=2)
-# Title and size
-plt.title('Daily AQI and 5-Day Average AQI (Santa Barbara County)', fontsize=16)
-# X label and size
-plt.xlabel('Date', fontsize=14)
-# Y label and size
-plt.ylabel('AQI', fontsize=14)
-# Rotate x-axis labels
-plt.xticks(rotation=45)
-# Legend
-plt.legend()
-# Grid
-plt.grid() 
-# Add shaded area for Thomas fire
-plt.axvspan(pd.Timestamp('2017-12-01'), pd.Timestamp('2017-12-31'), color='yellow', alpha=0.3)
-# Layout
-plt.tight_layout()
-
-# Show plot
-plt.show()</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>aqi_17 <span class="op">=</span> pd.read_csv(<span class="st">"data/daily_aqi_by_county_2017.csv"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>aqi_18 <span class="op">=</span> pd.read_csv(<span class="st">"data/daily_aqi_by_county_2018.csv"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine datasets (2017 and 2018)</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>aqi <span class="op">=</span> pd.concat([aqi_17, aqi_18])</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Simplify column names</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>aqi.columns <span class="op">=</span> (aqi.columns</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                  .<span class="bu">str</span>.lower()</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                  .<span class="bu">str</span>.replace(<span class="st">' '</span>, <span class="st">'_'</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Save filtered (Santa Barbara) data </span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>aqi_sb <span class="op">=</span> aqi[aqi[<span class="st">'county_name'</span>] <span class="op">==</span> <span class="st">'Santa Barbara'</span>]</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep only specific columns (date, aqi, category, defining_parameter, defining_site, and number_of_sites_reporting)</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>aqi_sb <span class="op">=</span> aqi_sb[[<span class="st">'date'</span>, <span class="st">'aqi'</span>, <span class="st">'category'</span>, <span class="st">'defining_parameter'</span>, <span class="st">'defining_site'</span>, <span class="st">'number_of_sites_reporting'</span>]]</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert specific object column (date) to datetime object</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>aqi_sb[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(aqi_sb[<span class="st">'date'</span>])</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Save with new (date) index</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>aqi_sb <span class="op">=</span> aqi_sb.set_index(<span class="st">'date'</span>).sort_index()</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Add new 5 day mean column to data (Santa Barbara)</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>aqi_sb[<span class="st">'five_day_average'</span>] <span class="op">=</span> aqi_sb[<span class="st">'aqi'</span>].rolling(window<span class="op">=</span><span class="st">'5D'</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot figure</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">7</span>))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot aqi , label, color, size, and transparency</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>plt.plot(aqi_sb.index.values, aqi_sb[<span class="st">'aqi'</span>].values, label<span class="op">=</span><span class="st">'Daily AQI'</span>, color<span class="op">=</span><span class="st">'darkblue'</span>, linewidth<span class="op">=</span><span class="dv">1</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot average, label, color, and size</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>plt.plot(aqi_sb.index.values, aqi_sb[<span class="st">'five_day_average'</span>].values, label<span class="op">=</span><span class="st">'5-Day Average AQI'</span>, color<span class="op">=</span><span class="st">'fuchsia'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Title and size</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Daily AQI and 5-Day Average AQI (Santa Barbara County)'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co"># X label and size</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Y label and size</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'AQI'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Rotate x-axis labels</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(array([17167., 17257., 17348., 17440., 17532., 17622., 17713., 17805.,
+       17897.]), [Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, ''), Text(0, 0, '')])</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Legend</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Grid</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>plt.grid() </span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Add shaded area for Thomas fire</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>plt.axvspan(pd.Timestamp(<span class="st">'2017-12-01'</span>), pd.Timestamp(<span class="st">'2017-12-31'</span>), color<span class="op">=</span><span class="st">'yellow'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Layout</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Show plot</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="False-color-blog-Ramirez_files/figure-html/unnamed-chunk-15-9.png" class="img-fluid figure-img" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>The air quality during the Thomas Fire was high. The Thomas fire shows a spike in the aqi daily shown in blue and 5 day average shown in pink. I’ve highlighted the month of December yellow to clarify the spike occurence. I suggest doing this to clearly identify the time of interest. It is clear that the daily aqi was much higher than the 5 day average but the 5 day average does remain high for a while compared to normal days. The daily aqi dropped from the highest point to where the average remained. For atleast half of the month of December the daily aqi and the 5 day average were above 150 in which pollution would be a problem. This data visualization shows the importance of being able to gather data and applying the skills of analysis.</p>
 <p>Data analysis helps identify the sources and patterns of pollution, whether it’s from industrial activities, vehicle emissions, agricultural runoff, or natural events like wildfires. Understanding where and when pollutants are released is the first step in controlling them. By analyzing historical data, we can detect trends in pollution levels, such as increases or decreases in air, water, or soil quality over time. This can help policymakers and environmental agencies make informed decisions about interventions. Data analysis allows for the creation of clear, visual representations of pollution levels, such as maps, graphs, and interactive dashboards. Data analysis can identify areas where pollution control technologies can be most effective, encouraging innovation in clean energy, waste management, or pollution-reducing technologies.</p>
 <p>###</p>
