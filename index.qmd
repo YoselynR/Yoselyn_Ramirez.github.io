@@ -1,5 +1,5 @@
 ---
-title: "Yoselyn Ramirez"
+title: "Yos Ramirez"
 image: images/Yoselyn Ramirez_MEDS Headshot 2024_0029.jpeg
 about: 
   template: trestles
@@ -12,4 +12,4 @@ about:
       target: _blank
 ---
 
-...
+I go by Yos and I am a current MEDS student at UCSB, c/o of 2025. I did my undergrad at UCSB and I am hoping to pursue my PhD at UCSB too. My current passion is the environment and learning about different languages for data science. I will be using this site mainly for blog posts on projects throughout my journey in the MEDS program. Get to know me better in the about_me section and don't forget to click on the blogs above to read a little code.
