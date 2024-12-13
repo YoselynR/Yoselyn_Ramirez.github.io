@@ -1,5 +1,6 @@
 ---
 title: "Yoselyn Ramirez"
+image: images/Yoselyn Ramirez_MEDS Headshot 2024_0029.jpeg
 about: 
   template: trestles
   links: 
@@ -11,6 +12,4 @@ about:
       target: _blank
 ---
 
-Welcome to Yosland
-
-\![\](images/Yoselyn Ramirez_MEDS Headshot 2024_0029.jpeg){width=50%}
+...
