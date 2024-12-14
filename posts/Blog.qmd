@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "Blogs"
 date: 2024-12-09
 categories: [blog]
 tags: [landing page]
@@ -7,9 +7,13 @@ draft: false
 output: html_document
 ---
 
-# Welcome to My Blog
+# Welcome to my Blogs
 
-Welcome to my blog! Below, you'll find a list of my recent blog posts. Click on any title to read the full post.
+Welcome to my blog! Below, you'll find a list of my recent blog posts. Click on any image to read the full post.
+
+[![Post 1 - Thomas Fire](images/AQI.png)](False-color-blog-Ramirez.qmd)
+
+---
 
 ```{r, echo=FALSE, results='asis'}
 # List .qmd files in the 'posts' directory
