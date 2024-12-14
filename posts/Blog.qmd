@@ -13,6 +13,8 @@ Welcome to my blog! Below, you'll find a list of my recent blog posts. Click on 
 
 [![Post 1 - Thomas Fire](images/AQI.png)](False-color-blog-Ramirez.qmd)
 
+[![Post 2 - Leaf Pressure and Tree Wilt](images/TLP_RWC.png)](Stats Presentation.qmd)
+
 ---
 
 ```{r, echo=FALSE, results='asis'}

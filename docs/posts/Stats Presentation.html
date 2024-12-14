@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Yos">
+
+<title>Yoselyn_Ramirez - Stats Presentation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Yoselyn_Ramirez</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me.html"> 
+<span class="menu-text">About_me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../posts/Blog.html"> 
+<span class="menu-text">Blogs</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Stats Presentation</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Yos </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link active" data-scroll-target="#statistical-analysis">Statistical Analysis</a>
+  <ul class="collapse">
+  <li><a href="#question-does-water-content-matter-when-a-leaf-wilts" id="toc-question-does-water-content-matter-when-a-leaf-wilts" class="nav-link" data-scroll-target="#question-does-water-content-matter-when-a-leaf-wilts">Question: Does water content matter when a leaf wilts?</a>
+  <ul class="collapse">
+  <li><a href="#to-begin-we-will-read-in-the-data-plot-and-use-a-regression-model-to-interpret-the-variable-relationship.-i-will-look-at-omitted-variable-bias-and-other-ways-to-answer-the-question-i-have.-i-will-conclude-with-this-means-for-water-content-and-tlp-including-the-next-steps-i-would-take-to-clarify-the-answer-further." id="toc-to-begin-we-will-read-in-the-data-plot-and-use-a-regression-model-to-interpret-the-variable-relationship.-i-will-look-at-omitted-variable-bias-and-other-ways-to-answer-the-question-i-have.-i-will-conclude-with-this-means-for-water-content-and-tlp-including-the-next-steps-i-would-take-to-clarify-the-answer-further." class="nav-link" data-scroll-target="#to-begin-we-will-read-in-the-data-plot-and-use-a-regression-model-to-interpret-the-variable-relationship.-i-will-look-at-omitted-variable-bias-and-other-ways-to-answer-the-question-i-have.-i-will-conclude-with-this-means-for-water-content-and-tlp-including-the-next-steps-i-would-take-to-clarify-the-answer-further.">To begin we will read in the data, plot, and use a regression model to interpret the variable relationship. I will look at omitted variable bias and other ways to answer the question I have. I will conclude with this means for water content and TLP including the next steps I would take to clarify the answer further.</a></li>
+  <li><a href="#plot-1---relationship-between-tlp-and-total-rwc-at-tlp" id="toc-plot-1---relationship-between-tlp-and-total-rwc-at-tlp" class="nav-link" data-scroll-target="#plot-1---relationship-between-tlp-and-total-rwc-at-tlp">Plot 1 - Relationship between TLP and total RWC at TLP</a></li>
+  <li><a href="#lm---tlp-and-totrwctlp-saturated-water-content-leaf-mass-area" id="toc-lm---tlp-and-totrwctlp-saturated-water-content-leaf-mass-area" class="nav-link" data-scroll-target="#lm---tlp-and-totrwctlp-saturated-water-content-leaf-mass-area">lm() - TLP and totRWCtlp + Saturated Water Content + Leaf Mass Area</a></li>
+  <li><a href="#lm---tlp-and-water-loss-in-grams" id="toc-lm---tlp-and-water-loss-in-grams" class="nav-link" data-scroll-target="#lm---tlp-and-water-loss-in-grams">lm() - TLP and Water Loss in grams</a></li>
+  </ul></li>
+  <li><a href="#final-thoughts-next-steps" id="toc-final-thoughts-next-steps" class="nav-link" data-scroll-target="#final-thoughts-next-steps">Final Thoughts &amp; Next Steps</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+
+<section id="statistical-analysis" class="level1">
+<h1>Statistical Analysis</h1>
+<section id="question-does-water-content-matter-when-a-leaf-wilts" class="level2">
+<h2 class="anchored" data-anchor-id="question-does-water-content-matter-when-a-leaf-wilts">Question: Does water content matter when a leaf wilts?</h2>
+<ul>
+<li><p><code>Null hypothesis There is no difference in water content when a leaf wilts</code></p></li>
+<li><p><code>Alternate hypothesis There is a difference in water content when a leaf wilts</code></p></li>
+</ul>
+<p>Before we begin our analysis, I want to explain a bit more on the variables that will be presented and the reason behind exploring this question.</p>
+<p>The most important variable we will be looking at is Turgor Loss Point. The turgor loss point (TLP) of a leaf refers to the water potential at which a plant’s leaf cells begin to lose turgor pressure. Turgor pressure is generated by the water inside plant cells pushing against the rigid cell wall, keeping the leaf firm and upright. The turgor loss point is the specific water potential at which the pressure inside the cell drops to zero, causing the cell to become shrunk and contracted. As the plant loses water, the water potential of the cell becomes more negative. Typically at TLP the leaf loses its rigidity and wilts but TLP has other implications that can help determine drought tolerance. Plants with a more negative turgor loss point tend to be more drought-tolerant because they can retain turgor pressure longer under water stress. So, though TLP is not good for a leaf, it is an important indicator of a plant’s ability to withstand water stress.</p>
+<p>Another variable we will be exploring relative to TLP is total Relative Water Content at TLP. It can easily be understood why this is an important variable in our analysis. The total Relative Water Content at TLP is measured from full saturation at which then water is lost and at some point reaches TLP. So, in other words the content of the water inside a leaf at turgor loss point. Again, a more negative value indicates drought tolerance but not necessarily more or less water. However it is commonly known that cell hydration in a leaf is necessary for many of its metabolic processes to occur. Though drought tolerance is a great reason to look at TLP, I want to explore water content for the needs of a leaf and the plant to survive.</p>
+<p>The data we will be using in this blog is mostly on Trees which are a great example of having different physiological pressures. Trees are very important to the ecosystem because they support other organisms. They provide a fair amount of oxygen to the air. My interest with trees lies within their ability to store carbon. Without plenty of trees carbon dioxide will increase even more than it has in the past 20 years. So, I want to keep trees alive and help with their need for water that the recent drought has so drastically affected them with. In this analysis I want to look for variables that can predict the relative water content at which TLP occurs.</p>
+<section id="to-begin-we-will-read-in-the-data-plot-and-use-a-regression-model-to-interpret-the-variable-relationship.-i-will-look-at-omitted-variable-bias-and-other-ways-to-answer-the-question-i-have.-i-will-conclude-with-this-means-for-water-content-and-tlp-including-the-next-steps-i-would-take-to-clarify-the-answer-further." class="level3">
+<h3 class="anchored" data-anchor-id="to-begin-we-will-read-in-the-data-plot-and-use-a-regression-model-to-interpret-the-variable-relationship.-i-will-look-at-omitted-variable-bias-and-other-ways-to-answer-the-question-i-have.-i-will-conclude-with-this-means-for-water-content-and-tlp-including-the-next-steps-i-would-take-to-clarify-the-answer-further.">To begin we will read in the data, plot, and use a regression model to interpret the variable relationship. I will look at omitted variable bias and other ways to answer the question I have. I will conclude with this means for water content and TLP including the next steps I would take to clarify the answer further.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>TLP_Other <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/fullspp.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>The data that we are using is on mean values of 262 different species within the United States. The limitations include the difference in number of data points determining mean values per species.</code></p>
+<p>Plotting</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TLP_Other, <span class="fu">aes</span>(<span class="at">x =</span> TLP, <span class="at">y =</span> totRWCtlp)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Turgor Loss Point"</span>, <span class="at">y =</span> <span class="st">"Relative Water Content (at TLP)"</span>, <span class="at">title =</span> <span class="st">"Relationship Between TLP and RWC"</span>)<span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-1---relationship-between-tlp-and-total-rwc-at-tlp" class="level3">
+<h3 class="anchored" data-anchor-id="plot-1---relationship-between-tlp-and-total-rwc-at-tlp">Plot 1 - Relationship between TLP and total RWC at TLP</h3>
+<p>In the plot above we are looking at the relationship between TLP and total RWC at TLP. Though this might seem a bit redundant or overly expressed, the TLP alone is actually a negative value, past 0. The TLP with regard to RWC is only pointing to the amount of water when TLP occurs. So, RWC at TLP is how much water is in a cell when TLP occurs. Plotted for their relationship, the amount of water in a leaf when TLP occurs varies drastically from ~55 to ~100.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TLP_Other, <span class="fu">aes</span>(<span class="at">x =</span> TLP, <span class="at">y =</span> totRWCtlp)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span>  <span class="co"># Adds the scatter plot points</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span>  <span class="co"># Adds a linear regression line</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Turgor Loss Point"</span>, <span class="at">y =</span> <span class="st">"Relative Water Content (at TLP)"</span>, <span class="at">title =</span> <span class="st">"Relationship Between TLP and RWC with Regression Line"</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="dv">1</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="plot-2---regression-line-added-to-plot-1" class="level4">
+<h4 class="anchored" data-anchor-id="plot-2---regression-line-added-to-plot-1">Plot 2 - Regression line added to plot 1</h4>
+<p>Now we can more clearly see the relationship that decreases, thinking in negative numbers, TLP as total RWC at TLP decreases. The negative relationship can imply that as there is less water TLP is most likely to be more negative. The extent to which RWC can predict TLP is not clear here and further analysis are necessary, such as p value.</p>
+<p>Fitting a linear regression model</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the linear model</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(TLP <span class="sc">~</span> totRWCtlp, <span class="at">data =</span> TLP_Other)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the summary of the model (the regression stats)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = TLP ~ totRWCtlp, data = TLP_Other)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.19988 -0.41149 -0.03521  0.31326  2.22918 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  3.112567   0.440979   7.058 1.94e-11 ***
+totRWCtlp   -0.014048   0.005119  -2.744  0.00654 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.5767 on 232 degrees of freedom
+  (28 observations deleted due to missingness)
+Multiple R-squared:  0.03144,   Adjusted R-squared:  0.02727 
+F-statistic: 7.531 on 1 and 232 DF,  p-value: 0.00654</code></pre>
+</div>
+</div>
+</section>
+<section id="lm---tlp-and-totrwctlp" class="level4">
+<h4 class="anchored" data-anchor-id="lm---tlp-and-totrwctlp">lm() - TLP and totRWCtlp</h4>
+<p>The regression model above is for TLP and total RWC at TLP which we have already plotted. The slope is - 0.014 which is not much but still negative. The R-squared value is 0.031 which means predictability is only 3%. The p value however significant therefore we can reject the null hypothesis. The p value is less than 0.05 so there is a difference in water content when a leaf wilts. By how much is a question on its own, though I do want to explore that, let’s look at possible omitted variable bias that can give a greater predictability value.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model for TLP ~ totRWCtlp</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>model_totRWCtlp <span class="ot">&lt;-</span> <span class="fu">lm</span>(TLP <span class="sc">~</span> totRWCtlp <span class="sc">+</span> SWC <span class="sc">+</span> LMA, <span class="at">data =</span> TLP_Other)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the summary of the model (the regression stats)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_totRWCtlp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = TLP ~ totRWCtlp + SWC + LMA, data = TLP_Other)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.28082 -0.37916 -0.05036  0.28184  2.07624 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  3.3131559  0.4636958   7.145 1.82e-11 ***
+totRWCtlp   -0.0165330  0.0053745  -3.076 0.002403 ** 
+SWC         -0.1015162  0.0257595  -3.941 0.000114 ***
+LMA          0.0027117  0.0006698   4.048 7.47e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.5323 on 192 degrees of freedom
+  (66 observations deleted due to missingness)
+Multiple R-squared:  0.1964,    Adjusted R-squared:  0.1839 
+F-statistic: 15.65 on 3 and 192 DF,  p-value: 3.821e-09</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="lm---tlp-and-totrwctlp-saturated-water-content-leaf-mass-area" class="level3">
+<h3 class="anchored" data-anchor-id="lm---tlp-and-totrwctlp-saturated-water-content-leaf-mass-area">lm() - TLP and totRWCtlp + Saturated Water Content + Leaf Mass Area</h3>
+<p>The regression model above is for TLP and total RWC at TLP but includes saturated water content, and leaf mass area which we have not plotted but will do next. First, let’s interpret these numbers to get a better idea on the bias that may be present. Breaking it down by coefficient because there are more variables to look at.</p>
+<p>The slope for:</p>
+<ul>
+<li><p>RWC is -0.017 which is not much different than the previous model that excluded SWC and LMA and it is still negative so there is no omitted variable bias based on this.</p></li>
+<li><p>SWC is -0.106 which is more negative than for RWC alone so this will make a difference in how TLP increases, or is more negative in value, if plotted together.</p></li>
+<li><p>LMA is 0.003 which is positive but very small so it will have an effect on the overall slope if plotted but not drastically.</p></li>
+</ul>
+<p>The p value for:</p>
+<ul>
+<li><p>RWC is lower this time than when modeled alone, which could indicate that this model is better but both models reject the null hypothesis the same.</p></li>
+<li><p>SWC is lower that RWC, again indicating that this variable may make a difference in the relationship with TLP.</p></li>
+<li><p>LMA is the smallest value in this model and lowers the overall p value by much more than the other two variables.</p></li>
+</ul>
+<p>The R-squared, considering RWC + SWC + LMA, is 0.196 so that is a predictability of 20% which is distinctively much higher than with total RWC at TLP alone. This could help better predict TLP but it seems to low still, and possibly other variables could be missing. Therefore there is omitted variable bias. Overall, SWC seems to have a slope that is more relevant to consider if plotted together but LMA has the smallest p value to consider when looking at the trend.</p>
+<p>Plotting the new model <code>by variable</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot for `totRWCtlp` and `TLP` with regression line</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TLP_Other, <span class="fu">aes</span>(<span class="at">y =</span> totRWCtlp, <span class="at">x =</span> TLP)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span>  <span class="co"># Scatter plot</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span>  <span class="co"># Regression line</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Turgor Loss Point (totRWCtlp)"</span>, <span class="at">x =</span> <span class="st">"TLP"</span>, <span class="at">title =</span> <span class="st">"Relationship Between TLP and totRWCtlp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot for `SWC` and `TLP` with regression line</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TLP_Other, <span class="fu">aes</span>(<span class="at">y =</span> SWC, <span class="at">x =</span> TLP)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span>  <span class="co"># Scatter plot</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span>  <span class="co"># Regression line</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Saturated Water Content (SWC)"</span>, <span class="at">x =</span> <span class="st">"TLP"</span>, <span class="at">title =</span> <span class="st">"Relationship Between TLP and SWC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot for `LMA` and `TLP` with regression line</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TLP_Other, <span class="fu">aes</span>(<span class="at">y =</span> LMA, <span class="at">x =</span> TLP)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span>  <span class="co"># Scatter plot</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span>  <span class="co"># Regression line</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Leaf Mass Area (LMA)"</span>, <span class="at">x =</span> <span class="st">"TLP"</span>, <span class="at">title =</span> <span class="st">"Relationship Between TLP and LMA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-7-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="plots-3-5" class="level4">
+<h4 class="anchored" data-anchor-id="plots-3-5">Plots 3-5</h4>
+<p>The plots above show the relationship between TLP and total RWC at TLP which we’ve seen already, TLP and SWA which I will explain first, then TLP and LMA which I will explain second. <code>Note that TLP is still on the x axis but can easily be on the y axis, for ease of interpretation I set it to the x axis as with the previous plots.</code> First, TLP and SWA, Saturated Water Content is the amount of water present in the leaf in g per g of dry mass. So, in terms of TLP the SWC value is not considering TLP but can help predict TLP if there were a strong relationship. Second, TLP and LMA, Leaf Mass Area is grams per area m2 and looks more like a cone shape so that is interesting. I can’t tell how well the residuals are so we are plotting those.</p>
+<p>Residual plots with regression line</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)  <span class="co"># For partial regression plots</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Partial regression plot for `totRWCtlp`</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">crPlot</span>(model_totRWCtlp, <span class="st">"totRWCtlp"</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"Partial Regression Plot for total Relative Water Content (at tlp)"</span>, </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">"darkblue"</span>, </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">16</span>, </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">1.5</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">grid =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Partial regression plot for `SWC`</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crPlot</span>(model_totRWCtlp, <span class="st">"SWC"</span>, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"Partial Regression Plot for Saturated Water Content"</span>, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">"forestgreen"</span>, </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">16</span>, </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">1.5</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">grid =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Partial regression plot for `LMA`</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">crPlot</span>(model_totRWCtlp, <span class="st">"LMA"</span>, </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"Partial Regression Plot for Leaf Mass Area"</span>, </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">"darkred"</span>, </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">16</span>, </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">1.5</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">grid =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-8-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="plots-6-8" class="level4">
+<h4 class="anchored" data-anchor-id="plots-6-8">Plots 6-8</h4>
+<p>Now that we’ve looked at the regression line, the residuals will be interesting to digress. The residuals can say a lot about a regression model because there are underlying patterns that a regression line does not necessarily capture. The plots above show the residual line in pink, and the area to notice is the 0.0 mark on the y axis. The closer the pink line stays to 0 the closer the observed values are to the predicted values determined from the regression model. As you can see from the plots above, the total RWC at TLP is the closest to 0 from end to end. All the plots show the pink line crossing 0 at some point but only total RWC at TLP stays somewhat consistent. The shape of the plotted points follow a trend and determine heteroscedasticity for SWA and LMA which means that there is no constant variance. Though the residual line for total RWC at TLP is not perfect it has potential to be explored further in my opinion.</p>
+<p>To end this interesting yet insightful statistical analysis let’s quickly look at water loss in grams</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the linear model</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>model_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(TLP <span class="sc">~</span> water_loss.g, <span class="at">data =</span> TLP_Other)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the summary of the model (the regression stats)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = TLP ~ water_loss.g, data = TLP_Other)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.11735 -0.39947 -0.07695  0.30720  2.19347 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  2.1938100  0.0697469  31.454  &lt; 2e-16 ***
+water_loss.g 0.0014398  0.0002876   5.006 1.14e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.557 on 220 degrees of freedom
+  (40 observations deleted due to missingness)
+Multiple R-squared:  0.1022,    Adjusted R-squared:  0.09817 
+F-statistic: 25.06 on 1 and 220 DF,  p-value: 1.14e-06</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="lm---tlp-and-water-loss-in-grams" class="level3">
+<h3 class="anchored" data-anchor-id="lm---tlp-and-water-loss-in-grams">lm() - TLP and Water Loss in grams</h3>
+<p>The regression model above is for TLP and water loss in grams which seems to have better predictability that total RWC at TLP but not when including the other variables, SWA and LMA. Based on the coefficients, the slope is positive bit small at 0.001 and the median residual is close to 0. The p value is less than 0.05 so that is significant, much more than RWC, and again the null hypothesis is rejected. The predictability is 10% which is interesting because though water loss and RWC are not the same they both are measurements of water which relative to TLP should be able to represent similar results in the context of interpreting a pattern with TLP. However, water loss is not at TLP as RWC is and thought water loss is closer to predicting TLP I stand by RWC being worth looking at further in a future statistical analysis project.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TLP_Other, <span class="fu">aes</span>(<span class="at">x =</span> TLP, <span class="at">y =</span> water_loss.g)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"darkred"</span>) <span class="sc">+</span>  <span class="co"># Adds the scatter plot points</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span>  <span class="co"># Adds a linear regression line</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Turgor Loss Point"</span>, <span class="at">y =</span> <span class="st">"Water Loss"</span>, <span class="at">title =</span> <span class="st">"Relationship Between TLP and Water Loss"</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="dv">1</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Stats-Presentation_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="plot-9" class="level4">
+<h4 class="anchored" data-anchor-id="plot-9">Plot 9</h4>
+<p>I plotted the relationship of TLP with water loss to finalize this analysis. The residual line better shows the increase in slope as TLP increases, so does water loss. This correlates with the assumption that water loss in a plant causes wilt but the relationship ois not as strong as is quickly assumed.</p>
+</section>
+</section>
+</section>
+<section id="final-thoughts-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="final-thoughts-next-steps">Final Thoughts &amp; Next Steps</h2>
+<p>The purpse of this blog was to look at how TLP can predict wilt by assessing the Relative Water Content at TLP which leaves me with more questions. Such that I will continue to explore the underlying patterns that can help predict the amount of water neccessary for trees to survive.</p>
+<p>The next steps to consider include:</p>
+<p><u>Looking for more statistical analysis</u> - to help explain dyanmic relationships</p>
+<p><u>Adding new variables or calculating some</u> - total RWC at TLP was calculated and therefore other variables can be too</p>
+<p><u>Determining differences</u> - such as regions, seasons, and more …</p>
+<p>References</p>
+<p>Bartlett, M. K., Scoffoni, C., &amp; Sack, L. (2012). The determinants of leaf turgor loss point and prediction of drought tolerance of species and biomes: a global meta-analysis. Ecology letters, 15(5), 393–405. https://doi.org/10.1111/j.1461-0248.2012.01751.x</p>
+<p>Data in this blog is from the LEAF lab and is currently not available as this is part of an ongoing meta analysis</p>
+<p><strong>UCSB LEAF LAB</strong></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
