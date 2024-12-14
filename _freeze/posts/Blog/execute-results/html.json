@@ -1,8 +1,8 @@
 {
-  "hash": "7c2728703507856d4def1c9be1474539",
+  "hash": "0fa6a40e82b8bf7253db88d9aa5031e9",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Blogs\"\ndate: 2024-12-09\ncategories: [blog]\ntags: [landing page]\ndraft: false\noutput: html_document\n---\n\n\n# Welcome to my Blogs\n\nWelcome to my blog! Below, you'll find a list of my recent blog posts. Click on any title to read the full post.\n\n[![Post 1 - Thomas Fire](images/AQI.png)](False-color-blog-Ramirez.qmd)\n\n\n\n\n[---](./False-color-blog-Ramirez.html)\n",
+    "markdown": "---\ntitle: \"Blogs\"\ndate: 2024-12-09\ncategories: [blog]\ntags: [landing page]\ndraft: false\noutput: html_document\n---\n\n\n# Welcome to my Blogs\n\nWelcome to my blog! Below, you'll find a list of my recent blog posts. Click on any image to read the full post and learn how that image was created with code.\n\n[![Post 1 - Thomas Fire](images/AQI.png)](False-color-blog-Ramirez.qmd)\n\n---\n\n\n[---](./False-color-blog-Ramirez.html)\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

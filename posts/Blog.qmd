@@ -9,7 +9,7 @@ output: html_document
 
 # Welcome to my Blogs
 
-Welcome to my blog! Below, you'll find a list of my recent blog posts. Click on any image to read the full post.
+Welcome to my blog! Below, you'll find a list of my recent blog posts. Click on any image to read the full post and learn how that image was created with code.
 
 [![Post 1 - Thomas Fire](images/AQI.png)](False-color-blog-Ramirez.qmd)
 
