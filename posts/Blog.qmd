@@ -1,23 +1,22 @@
 ---
-title: "My First Post"
+title: "Blog"
 date: 2024-12-09
 categories: [blog]
-tags: [first, post]
+tags: [landing page]
 draft: false
+output: html_document
 ---
 
-# My First Blog Post
+# Welcome to My Blog
 
-This is the content of my first blog post.
+Welcome to my blog! Below, you'll find a list of my recent blog posts. Click on any title to read the full post.
 
-```{r}
-blog_posts <- list.files(pattern = "*.qmd", full.names = TRUE)
-blog_posts
-```
-
-```{r}
+```{r, echo=FALSE, results='asis'}
 # List .qmd files in the 'posts' directory
-blog_posts <- list.files("posts", pattern = "*.qmd", full.names = TRUE)
+blog_posts <- list.files(pattern = "*.qmd", full.names = TRUE)
+
+# Filter out the current blog landing page file (e.g., blog.qmd)
+blog_posts <- blog_posts[!grepl("Blog.qmd", blog_posts)]
 
 # Extract titles from the first header (#) in each blog post
 blog_titles <- sapply(blog_posts, function(x) {
@@ -26,9 +25,10 @@ blog_titles <- sapply(blog_posts, function(x) {
   return(title)
 })
 
-# Create links to each post
-links <- paste0("[", blog_titles, "](posts/", basename(blog_posts), ")")
-cat(links, sep = "\n")
+# Create links to each post with ".html" extension (Quarto generates HTML files from .qmd)
+links <- paste0("[", blog_titles, "](./", gsub(".qmd$", ".html", basename(blog_posts)), ")")
 
+# Print the links as raw HTML
+cat(links, sep = "<br>")
 ```
 

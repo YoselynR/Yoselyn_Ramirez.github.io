@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Yos Ramirez",
     "section": "",
-    "text": "I go by Yos and I am a current MEDS student at UCSB, c/o of 2025. I did my undergrad at UCSB and I am hoping to pursue my PhD at UCSB too. My current passion is the environment and learning about different languages for data science. I will be using this site mainly for blog posts on projects throughout my journey in the MEDS program. Get to know me better in the about_me section and don’t forget to click on the blogs above to read a little code."
+    "text": "Welcome to Yosland\nI go by Yos and I am a current MEDS student at UCSB, c/o of 2025. I did my undergrad at UCSB and I am hoping to pursue my PhD at UCSB too. My current passion is the environment and learning about different languages for data science. I will be using this site mainly for blog posts on projects throughout my journey in the MEDS program. Get to know me better in the about_me section and don’t forget to click on the blogs above to read a little code."
   },
   {
     "objectID": "False-color-blog-Ramirez.html",
@@ -170,8 +170,8 @@
   {
     "objectID": "posts/Blog.html",
     "href": "posts/Blog.html",
-    "title": "My First Post",
+    "title": "Blog",
     "section": "",
-    "text": "My First Blog Post\nThis is the content of my first blog post.\n\nblog_posts &lt;- list.files(pattern = \"*.qmd\", full.names = TRUE)\nblog_posts\n\n[1] \"./Blog.qmd\"                     \"./False-color-blog-Ramirez.qmd\"\n\n\n\n# List .qmd files in the 'posts' directory\nblog_posts &lt;- list.files(\"posts\", pattern = \"*.qmd\", full.names = TRUE)\n\n# Extract titles from the first header (#) in each blog post\nblog_titles &lt;- sapply(blog_posts, function(x) {\n  lines &lt;- readLines(x)\n  title &lt;- gsub(\"^#\\\\s*\", \"\", lines[1])  # Remove markdown header syntax (#)\n  return(title)\n})\n\n# Create links to each post\nlinks &lt;- paste0(\"[\", blog_titles, \"](posts/\", basename(blog_posts), \")\")\ncat(links, sep = \"\\n\")\n\n[](posts/)"
+    "text": "Welcome to My Blog\nWelcome to my blog! Below, you’ll find a list of my recent blog posts. Click on any title to read the full post.\n—"
   }
 ]
