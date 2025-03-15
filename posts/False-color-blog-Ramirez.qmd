@@ -78,7 +78,7 @@ py_run_string("import matplotlib")
 
 ```
 
-```{python}
+```{python, echo=FALSE, warning=FALSE}
 #| tags: []
 import os
 import rioxarray as rioxr
@@ -302,6 +302,5 @@ Some information on a few useful libraries
 3.  For visualizations `matplotlib.pyplot` is one of the most commonly used libraries in Python for creating static, interactive, and animated plots and graphs as seen in this blog. In geospatial analysis, you can use plt.imshow() to visualize raster images (such as satellite imagery) and adjust color maps to highlight different features (e.g., vegetation or urban areas).
 
 4.  Geospatial data, rasters and vectors, often require heavy manipulation and `numpy` enables efficient handling of large datasets. As well as performing manipulations on multi-dimensional arrays, which can be common in remote sensing.
-
 
 <center>**That's it for the Thomas Fire Blog**</center>
