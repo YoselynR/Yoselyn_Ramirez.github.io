@@ -124,3 +124,5 @@ The strengths of the study are that randomization mitigates selection bias ensur
 We were able to access and replicate the results from this experiment. We accessed the code from the [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QXKPHH). As this code and the resulting code was in STATA - we used AI tools (Claude.ai) to convert the code into an R compatible format - and prompted it to replicate a simplified version of the code for us. The process and the results of this can be seen in [this github repository](https://github.com/nmoraescommit/env_policy_garber)
 
 We were able to successfully replicate and confirm the findings behind the study.
+
+Aklin, M., Bayer, P., Harish, S. P., & Urpelainen, J. (2017). Does basic energy access generate socioeconomic benefits? A field experiment with off-grid solar power in India. Science Advances, 3(5), e1602. https://doi.org/10.1126/sciadv.1602
