@@ -1,5 +1,5 @@
 ---
-title: "Harnessing the Sun"
+title: "Evaluation of Causal Inference"
 author: "Naomi Moraes, Elizabeth Peterson, Yos Ramirez"
 format: html
 editor: visual
