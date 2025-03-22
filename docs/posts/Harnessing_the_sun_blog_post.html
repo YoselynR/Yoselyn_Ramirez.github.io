@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-12-09">
+<meta name="author" content="Naomi Moraes, Elizabeth Peterson, Yos Ramirez">
 
-<title>Yoselyn_Ramirez - Blogs</title>
+<title>Yoselyn_Ramirez - EDS241 Blog Post</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -98,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About_me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../posts/Blog.html" aria-current="page"> 
+    <a class="nav-link" href="../posts/Blog.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
 </ul>
@@ -112,23 +141,20 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Blogs</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">blog</div>
-              </div>
-                  </div>
+      <h1 class="title">EDS241 Blog Post</h1>
+                      </div>
   </div>
     
   
   <div class="quarto-title-meta column-page-left">
 
-      
       <div>
-      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 9, 2024</p>
-      </div>
+               <p>Naomi Moraes, Elizabeth Peterson, Yos Ramirez </p>
+            </div>
     </div>
+      
     
       
     </div>
@@ -142,7 +168,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-my-blogs" id="toc-welcome-to-my-blogs" class="nav-link active" data-scroll-target="#welcome-to-my-blogs">Welcome to my Blogs</a></li>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#randomization-and-did" id="toc-randomization-and-did" class="nav-link" data-scroll-target="#randomization-and-did">Randomization and DiD</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#robustness-checks" id="toc-robustness-checks" class="nav-link" data-scroll-target="#robustness-checks">Robustness Checks</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#code-replication" id="toc-code-replication" class="nav-link" data-scroll-target="#code-replication">Code Replication</a></li>
   </ul>
 </nav>
     </div>
@@ -153,35 +184,100 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="welcome-to-my-blogs" class="level1">
-<h1>Welcome to my Blogs</h1>
-<p>Welcome to my blog! Below, you’ll find a list of my recent blog posts. Click on any image to read the full post and learn how that image was created with code.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../posts/False-color-blog-Ramirez.html"><img src="images/AQI.png" class="img-fluid figure-img" alt="Post 1 - Thomas Fire"></a></p>
-<figcaption>Post 1 - Thomas Fire</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../posts/Stats Presentation.html"><img src="images/TLP_RWC.png" class="img-fluid figure-img" alt="Post 2 - Leaf Pressure and Tree Wilt"></a></p>
-<figcaption>Post 2 - Leaf Pressure and Tree Wilt</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../posts/Energy_emissions_blog_post.html"><img src="images/plot2.png" class="img-fluid figure-img" alt="Post 3 - Energy CO2 Emissions"></a></p>
-<figcaption>Post 3 - Energy CO2 Emissions</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../posts/Harnessing_the_sun_blog_post.html"><img src="imaIndiahabitations.png" class="img-fluid figure-img" alt="Post 4 - Harnessing the Sun"></a></p>
-<figcaption>Post 4 - Harnessing the Sun</figcaption>
-</figure>
-</div>
-<hr>
-<p><a href="./Energy_emissions_blog_post.html">—</a><br><a href="./False-color-blog-Ramirez.html">—</a><br><a href="./Harnessing_the_sun_blog_post.html">—</a><br><a href="./Stats Presentation.html">—</a></p>
+<h1 style="font-size: 24px;">
+<center>
+Harnessing the Sun Evaluation of Causal Inference
+</center>
+</h1>
+<h1 style="font-size: 18px;">
+<center>
+Does basic energy access generate socioeconomic benefits?
+</center>
+<center>
+A field experiment with off-grid solar power in India
+</center>
+</h1>
+<p>A study from May 2017 explores whether access to off-grid solar power can generate socioeconomic benefits for rural households in India. With millions of people living without reliable electricity, this research examines how solar energy could improve economic, educational, and health outcomes in underserved areas. Using a randomized controlled trial (RCT) and advanced statistical methods, the study seeks to determine if providing solar power to rural communities leads to measurable improvements in quality of life. By exploring this, the study provides crucial insights into how environmental policies like solar energy initiatives can contribute to broader development goals, particularly in regions facing significant energy deficits.</p>
+<section id="purpose" class="level3">
+<h3 class="anchored" data-anchor-id="purpose">Purpose</h3>
+<p>In this blog post, we will explore the evaluation of causal inference in the context of the study examining the impact of off-grid solar power in rural India. Causal inference is crucial in understanding whether observed changes in socioeconomic outcomes, such as income, education, and health, are truly a result of the solar power intervention, or if they are driven by other factors. The study uses a Randomized Controlled Trial to ensure that the differences between treatment and control groups are not due to pre-existing differences but are instead attributable to the solar intervention. We will dive into the statistical methods used in this study, including the Difference-in-Differences (DiD) approach, then we will look at robustness checks and conclude with the assumptions, violations and final thoughts.</p>
+<p>The research was carried out in collaboration with Meta Gao Power, who worked directly with rural households to install solar panels and monitor their effects on various socioeconomic indicators. The study aims to answer two primary questions: First, does access to solar energy improve economic, educational, and health outcomes for rural households? Second, can such interventions serve as models for broader development strategies in energy-deficient regions?</p>
+</section>
+<section id="randomization-and-did" class="level3">
+<h3 class="anchored" data-anchor-id="randomization-and-did">Randomization and DiD</h3>
+<p>In the next section of the blog post, we will explore the study’s use of causal inference through randomization to establish a causal link between the solar power intervention and its observed effects.</p>
+<p>The researchers use RCT to establish causal links between the treatment which is solar power access and two primary effects: energy access and its subsequent socioeconomic benefits. An RCT is one of the most powerful methods for establishing causal relationships because it helps eliminate bias by randomly assigning participants to different groups, ensuring that any differences in outcomes can be attributed to the treatment itself rather than pre-existing differences between the groups.</p>
+<p>There are two key groups:</p>
+<p><em>Treatment Group</em></p>
+<ul>
+<li>This group consisted of households that were approached by the MGP team and offered the opportunity to have a solar microgrid installed in their homes. These households received the solar power intervention, which provided them with access to reliable energy.</li>
+</ul>
+<p><em>Control Group</em></p>
+<ul>
+<li>Households in this group did not receive any intervention from the MGP team. These households were used as a comparison to see if the changes observed in the treatment group were indeed due to the solar power intervention, rather than other external factors.</li>
+</ul>
+<p>By randomly assigning households to these two groups, the study minimizes the risk of confounding factors, such as differences in income, education, or other baseline characteristics, affecting the results. This way, any observed changes in socioeconomic indicators like income, education, or health can be more confidently attributed to the access to solar energy rather than pre-existing disparities between the groups. Further, to evaluate the effects of the solar power intervention over time, the study employs a DiD approach, utilizing data from three distinct survey waves, which helps isolate the effect of solar power by comparing changes over time in both the treated and control groups. Additionally, the study accounts for noncompliance, where some households in the treatment group refused the solar intervention</p>
+<center>
+<p>Waves</p>
+<p>Baseline survey: February–March 2014 (before treatment)</p>
+<p>Midline survey: April–July 2014 (6 months after treatment)</p>
+<p>Endline survey: May–June 2015 (1 year after treatment)</p>
+</center>
+<h1 style="font-size: 18px;">
+<p>Noncompliance Methods</p>
+</h1>
+<p><em>Intent to Treat (ITT)</em></p>
+<ul>
+<li><p>This approach measures the effectiveness of the intervention by including all households in the treatment group, regardless of whether they received the treatment. This method provides a more conservative estimate of the intervention’s impact and is obtained using least-squares regression. The regression equation used to calculate the Intent to Treat is</p>
+<p>$$Y_{I,h,t} = \alpha_I + w_t + t^{ITT} \cdot \text{treatment}_{h,t} + \text{error}_{I,h,t}$$​</p></li>
+</ul>
+<p><em>Local Average Treatment Effects (LATE)</em></p>
+<ul>
+<li><p>This method measures the effectiveness of the intervention only on households that actually received the treatment (i.e., those where a solar microgrid was successfully installed). It is calculated using two-stage least-squares regression (2SLS). First stage estimates the likelihood that a household adopts the technology (i.e., receives the solar system). The equation for this stage regression is</p>
+<p><span class="math display">\[
+\text{installed}_{h,t} = \beta_h + \theta_t + \delta \cdot \text{treatment}_{h,t} + \mu_{h,t}
+\]</span></p>
+<p>The second stage assesses the impact of the treatment on outcome variables (such as income, education, and health). The equation for this stage regression is</p>
+<p>$$Y_{I,h,t} = \alpha_I + \omega_t + \tau^{LATE} \cdot \text{installed}_{h,t} + \text{error}_{I,h,t}$$</p>
+<p>These two methods help provide a comprehensive view of the intervention’s impact, addressing the potential biases introduced by noncompliance.</p></li>
+</ul>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<center>
+Energy Access Effects
+</center>
+<p>The intervention led to a rapid spread of household electrification, with the treatment group showing a significant increase in electrification rates, rising by 29 to 36 percentage points within a year. Treated households reported increased access to electricity, with daily hours of electricity use rising by 0.99 to 1.42 hours, though these estimates have wide confidence intervals. As a result of solar power adoption, treated households significantly reduced their reliance on kerosene, with spending on kerosene decreasing by 47 to 49 rupees per month compared to the control group. However, given the monthly MGP fee of 100 rupees per month, this intervention functionally increases electricity cost, even if it reduces kerosene spending.</p>
+<center>
+Socioeconomic Effects
+</center>
+<p>Despite the substantial improvements in energy access and reduced kerosene expenditure, the study found no systematic evidence of broader socioeconomic transformations. Monthly savings for treated households are expected to increase by 25%, while monthly expenses are anticipated to rise by 15%, reflecting the direct financial benefits of the solar energy intervention. However, there were no observed changes in key socioeconomic outcomes such as business creation, time spent working or studying, or improvements in income, education, or health, indicating that while the intervention improved energy access, it did not drive broader socioeconomic development.</p>
+</section>
+<section id="robustness-checks" class="level3">
+<h3 class="anchored" data-anchor-id="robustness-checks">Robustness Checks</h3>
+<p>The study conducted several tests to verify if observed effects could be due to spurious trends and to ensure that the treatment and control groups were comparable before the intervention. This is critical for ruling out selection bias where non-random assignment could distort the results and the observed effects could be due to other factors. The authors test different models, with different sets of control variables, to check if the results hold across specifications as placebo, alternative, and balancing. It was concluded that the effects are not sensitive to different model specifications or unaccounted-for factors, reinforcing the study’s validity.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<center>
+Assumptions
+</center>
+<p><em>Parallel Trends of DiD</em> The treatment and control groups would have followed the same trends in outcomes if not for the intervention tested through pre-treatment outcome comparisons.</p>
+<p><em>Random Assignment</em> Randomization would ensure the treatment group is not systematically different from the control group at baseline which minimizes the confounding risk.</p>
+<center>
+Violations
+</center>
+<p><em>External Validity</em> While the results are compelling within the study’s context they may not generalize to other regions or policy contexts such as urban areas or other countries with different energy challenges.</p>
+<p><em>Noncompliance</em> Some households may not have fully adhered to the solar power installation or usage which could attenuate the estimated effects.</p>
+<h1 style="font-size: 18px;">
+<p>Final Thoughts</p>
+</h1>
+<p>The strengths of the study are that randomization mitigates selection bias ensuring differences in outcomes are attributable to the intervention and the use of the DiD model helps control for time-varying factors strengthening the causal link between solar power access and socioeconomic improvements. Overall, the study presents a strong causal argument due to its randomized design, robustness of results, and strong statistical methods like DiD. However, assumptions like parallel trends and random assignment should be critically assessed, especially in the context of rural areas, such as India, where external factors might influence outcomes.</p>
+</section>
+<section id="code-replication" class="level1">
+<h1>Code Replication</h1>
+<p>We were able to access and replicate the results from this experiment. We accessed the code from the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QXKPHH">Harvard Dataverse</a>. As this code and the resulting code was in STATA - we used AI tools (Claude.ai) to convert the code into an R compatible format - and prompted it to replicate a simplified version of the code for us. The process and the results of this can be seen in <a href="https://github.com/nmoraescommit/env_policy_garber">this github repository</a></p>
+<p>We were able to successfully replicate and confirm the findings behind the study.</p>
 
 
 </section>
