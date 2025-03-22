@@ -19,6 +19,8 @@ Welcome to my blog! Below, you'll find a list of my recent blog posts. Click on 
 
 [![Post 4 - Harnessing the Sun](images/main_results.png)](Harnessing_the_sun_blog_post.qmd)
 
+
+
 ---
 
 ```{r, echo=FALSE, results='asis'}

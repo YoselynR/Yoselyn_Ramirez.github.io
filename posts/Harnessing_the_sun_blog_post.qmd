@@ -1,5 +1,5 @@
 ---
-title: "EDS241 Blog Post"
+title: "Harnessing the Sun"
 author: "Naomi Moraes, Elizabeth Peterson, Yos Ramirez"
 format: html
 editor: visual
