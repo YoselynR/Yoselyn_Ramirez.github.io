@@ -7,7 +7,7 @@ editor: visual
 
 <h1 style="font-size: 24px;">
 
-<center>Harnessing the Sun Evaluation of Causal Inference</center>
+<center>Harnessing the Sun</center>
 
 </h1>
 
