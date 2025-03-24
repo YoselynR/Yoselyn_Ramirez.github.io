@@ -1,5 +1,5 @@
 ---
-title: "Energy Carbon Footprint"
+title: "Energy Plant Carbon Footprint"
 author: "Yos Ramirez"
 format: html
 editor: visual
@@ -7,7 +7,7 @@ editor: visual
 
 <h1 style="font-size: 18px;">
 
-<center>**Energy Carbon Footprint by Fuel Type: Unveiling CO~2~ Emissions**</center>
+<center>**Energy Plant Carbon Footprint by Fuel Type: Unveiling CO~2~ Emissions**</center>
 
 </h1>
 

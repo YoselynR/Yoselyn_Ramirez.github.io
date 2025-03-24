@@ -1,8 +1,8 @@
 {
-  "hash": "355f6069adcbe4c2297b2f349b1b9fb3",
+  "hash": "b97488e35b1f36a9beda7a93c93916cc",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Blogs\"\ndate: 2024-12-09\ncategories: [blog]\ntags: [landing page]\ndraft: false\noutput: html_document\n---\n\n\n# Welcome to my Blogs\n\nWelcome to my blog! Below, you'll find a list of my recent blog posts. Click on any image to read the full post and learn how that image was created with code.\n\n[![Post 1 - Thomas Fire](images/AQI.png)](False-color-blog-Ramirez.qmd)\n\n[![Post 2 - Leaf Pressure and Tree Wilt](images/TLP_RWC.png)](Stats Presentation.qmd)\n\n[![Post 3 - Energy Carbon Dioxide Emissions](images/PolicyMakingPlot.png)](Energy_emissions_blog_post.qmd)\n\n[![Post 4 - Harnessing the Sun](images/main_results.png)](Harnessing_the_sun_blog_post.qmd)\n\n\n\n\n---\n\n\n[---](./Energy_emissions_blog_post.html)<br>[---](./False-color-blog-Ramirez.html)<br>[---](./Harnessing_the_sun_blog_post.html)<br>[---](./Stats Presentation.html)\n",
+    "markdown": "---\ntitle: \"Blogs\"\ndate: 2024-12-09\ncategories: [blog]\ntags: [landing page]\ndraft: false\noutput: html_document\n---\n\n\n# Welcome to my Blogs\n\nWelcome to my blog! Below, you'll find a list of my recent blog posts. Click on any image to read the full post and learn how that image was created with code.\n\n[![Post 1 - Thomas Fire](images/AQI.png)](False-color-blog-Ramirez.qmd)\n\n[![Post 2 - Leaf Pressure and Tree Wilt](images/TLP_RWC.png)](Stats Presentation.qmd)\n\n[![Post 3 - Energy Carbon Dioxide Emissions](images/PolicyMakingPlot.png)](Energy_emissions_blog_post.qmd)\n\n[![Post 4 - Harnessing the Sun](images/main_results.png)](Harnessing_the_sun_blog_post.qmd)\n\n---\n\n\n[---](./Energy_emissions_blog_post.html)<br>[---](./False-color-blog-Ramirez.html)<br>[---](./Harnessing_the_sun_blog_post.html)<br>[---](./Stats Presentation.html)\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
