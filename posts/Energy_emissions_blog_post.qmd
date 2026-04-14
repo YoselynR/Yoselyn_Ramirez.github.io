@@ -37,8 +37,6 @@ To answer the overarching question the analysis is broken down into several sub-
 
 -   Finally, for the general public, the goal is to highlight which fuel types have the highest total CO~2~ emissions and compare these emissions in an accessible way.
 
-
-
 <center>
 
 <h1 style="font-size: 20px;">
@@ -53,9 +51,7 @@ Technical Experts
 
 In this first visualization, I aim to show how CO~2~ emissions vary across different fuel types used by power plants in the U.S. The primary goal is to highlight the contribution of each fuel category to the overall CO~2~ emissions from these plants. By using the Plant primary fuel category variable, the scatter plot in this visualization represents the total CO~2~ emissions for each fuel type in log scale. Each point corresponds to one of the major fuel types, with the size corresponding to the actual emissions. Instead of displaying individual plants, emissions are aggregated at the fuel type level, meaning that each point represents the total emissions from all plants using that particular fuel type. This gives a clear comparison of how much CO~2~ emissions are being contributed by each fuel category overall.
 
-
 ![A scatter plot showing CO~2~ emissions for various plant primary fuel types, with point size reflecting the total emissions.](images/TechnicalAudiencePlot.png "A scatter plot displaying total Carbon Dioxide emissions by plant primary fuel type. Each point is sized according to the emissions value. The points are uncolored, with a uniform size. The x-axis is on a log scale, and the plot provides a comparison of emissions across different fuel types, with the size legend indicating actual emissions in tons.")
-
 
 <center>
 
@@ -69,7 +65,7 @@ Policy Makers
 
 ### Pie Charts
 
-In this section, I aim to visualize how CO~2~ emissions vary across different fuel types used by U.S. power plants, with a specific focus on the implications for policymakers. The goal is to highlight the contributions of each fuel category to the overall CO~2~ emissions and provide insights that can help guide regulatory decisions. The first pie chart illustrates the total CO~2~ emissions across U.S. power plants, broken down by fuel type. This chart includes  coal and gas, and aggregates biomass, oil, nuclear, gethermal, other fossil fuel and other fuel not named. To provide a more targeted approach, the second pie chart excludes coal and natural gas, giving policymakers a clearer picture of emissions from renewable and low-emission sources like biomass, and nuclear energy. Additionally, I excluded Hydro, Wind and Solar because they accounted for less than 0.1% as they are the cleanest energy sources.
+In this section, I aim to visualize how CO~2~ emissions vary across different fuel types used by U.S. power plants, with a specific focus on the implications for policymakers. The goal is to highlight the contributions of each fuel category to the overall CO~2~ emissions and provide insights that can help guide regulatory decisions. The first pie chart illustrates the total CO~2~ emissions across U.S. power plants, broken down by fuel type. This chart includes coal and gas, and aggregates biomass, oil, nuclear, gethermal, other fossil fuel and other fuel not named. To provide a more targeted approach, the second pie chart excludes coal and natural gas, giving policymakers a clearer picture of emissions from renewable and low-emission sources like biomass, and nuclear energy. Additionally, I excluded Hydro, Wind and Solar because they accounted for less than 0.1% as they are the cleanest energy sources.
 
 ![The left pie chart shows the distribution of CO~2~ emissions from various fuel types, including COAL and GAS, while the right chart focuses on emissions without COAL and GAS sources, emphasizing a cleaner energy mix.](images/PolicyMakingPlot.png "Two side-by-side pie charts depicting the distribution of Carbon Dioxide emissions by plant primary fuel type. The first chart includes all fuel types, with warm colors representing COAL and GAS, while the second chart excludes COAL and GAS, highlighting other fuel types in cool colors. Emission values are visualized as pie slices, providing a comparison of emissions between the two scenarios—one with and one without COAL and GAS sources.")
 
@@ -89,44 +85,46 @@ General Public
 
 In this final visualization, the goal is to present a straightforward and easily understandable comparison of CO~2~ emissions across different fuel types used by U.S. power plants. The bar plot visually represents the total CO~2~ emissions (in tons) for each fuel type, making it clear which sources are the largest contributors to CO~2~ emissions in power generation. For the general audience, this plot emphasizes the fuel categories that have the most significant environmental impact, helping to highlight which fuels, like coal and natural gas, contribute the most to climate change through their CO~2~ emissions. This bar plot uses a log scale on the y-axis to make it easier to compare emissions across a wide range of fuel types. A dashed line has been added for better visualization of the emissions trends, which provides insights into how emissions from different fuel types vary. Each bar in the plot is labeled with the actual emission value, allowing viewers to see the exact contribution of each fuel type to total emissions.
 
-
 ![A bar plot illustrating the CO~2~ emissions from various plant primary fuel types, with values displayed on each bar. The emissions are presented in a log scale for better comparison.](images/GeneralAudiencePlot.png "A horizontal bar plot displaying the total Carbon Dioxide emissions (in tons) for each plant primary fuel type. Each bar is labeled with its respective emission value, and the plot is ordered by total Carbon Dioxide emissions. The title is in red, and the subtitle is in blue, with a smooth trend line added for visualization of emissions trends.")
 
-
 <h1 style="font-size: 16px;">
+
 <center>Design considerations for three types of audiences</center>
+
 </h1>
 
 Together, these visualizations tell an important story about the sources of CO~2~ emissions from power plants and their implications for climate change. By adapting the designs to different audiences, technical experts, policymakers, and the general public, I’ve made the data accessible and actionable. The combination of thoughtful design choices, clear messaging, and attention to accessibility ensures that the insights from these visualizations can be understood by everyone.
 
-Below I highlight in an outline format the design decisions 
+Below I highlight in an outline format the design decisions
 
-1. The mix of chart types (ie. scatter plots, pie charts, and bar plots) best convey the data to each specific audience based on the interest of each.
+1.  The mix of chart types (ie. scatter plots, pie charts, and bar plots) best convey the data to each specific audience based on the interest of each.
 
-2. Each plot includes clear titles, labels, and annotations to ensure the message is easy to understand keeping consistency throughout (ie. center titles, fonts, text, arrows).
+2.  Each plot includes clear titles, labels, and annotations to ensure the message is easy to understand keeping consistency throughout (ie. center titles, fonts, text, arrows).
 
-3. Unnecessary grid lines and other unnecessary plot elements (ie. x axis text) are removed, ensuring that the visualizations stay clean and easy to interpret.
+3.  Unnecessary grid lines and other unnecessary plot elements (ie. x axis text) are removed, ensuring that the visualizations stay clean and easy to interpret.
 
-4. The color choices are intentionally designed for aesthetic appeal, consistency with a focus on the clarity of the message, and accessibility.
+4.  The color choices are intentionally designed for aesthetic appeal, consistency with a focus on the clarity of the message, and accessibility.
 
-5. Fonts are selected for readability, such as Times New Roman, Georgia, Arial or Comic Sans for titles subtitles and axis. Each plot varied because of the audience. 
+5.  Fonts are selected for readability, such as Times New Roman, Georgia, Arial or Comic Sans for titles subtitles and axis. Each plot varied because of the audience.
 
-6. The layout is carefully arranged to ensure that text and plot elements are evenly spaced, with text oriented in a way that makes it easy to read and interpret.
+6.  The layout is carefully arranged to ensure that text and plot elements are evenly spaced, with text oriented in a way that makes it easy to read and interpret.
 
-7. Visualizations are tailored to the audience based on the focus of each to explore emission for plant primary fuel type in the US.  
+7.  Visualizations are tailored to the audience based on the focus of each to explore emission for plant primary fuel type in the US.
 
-8. The message is centered on CO~2~ emissions from primary fuel types eliminating confusion of other variables and clarifying the issue.
+8.  The message is centered on CO~2~ emissions from primary fuel types eliminating confusion of other variables and clarifying the issue.
 
-9. Besides color, alt text is included for all images to make the visualizations accessible to individuals using screen readers.
+9.  Besides color, alt text is included for all images to make the visualizations accessible to individuals using screen readers.
 
-10. DEI lens was not fully applicable for the visualizations because specific regions of the US were not addressed. 
+10. DEI lens was not fully applicable for the visualizations because specific regions of the US were not addressed.
 
 References
 
 U.S. Environmental Protection Agency (EPA). (2023). Emissions & Generation Resource Integrated Database (eGRID) 2023. Retrieved from https://www.epa.gov/energy/emissions-generation-resource-integrated-database-egrid.
 
 <details>
-  <summary>Click to view code for data visualizations</summary>
+
+<summary>Click to view code for data visualizations</summary>
+
 ```{r, eval=FALSE, echo=TRUE}
 library(readxl)         
 library(dplyr)          
@@ -333,4 +331,5 @@ ggsave("images/plot2.png", plot = plot2, width = 10, height = 7, dpi = 300)
 ggsave("images/plot3.png", plot = plot3, width = 10, height = 7, dpi = 300)
 
 ```
+
 </details>
